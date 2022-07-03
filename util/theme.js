@@ -27,6 +27,7 @@ const theme = {
     xs: style => `@media only screen and (max-width: 414px) { ${style} }`,
     sm: style =>
       `@media only screen and (min-width: 414px) and (max-width: 768px) { ${style} }`,
+    mdMinus: style => `@media only screen and (max-width: 767px) { ${style} }`,
     md: style =>
       `@media only screen and (min-width: 768px) and (max-width: 1279px) { ${style} }`,
     mdPlus: style => `@media only screen and (min-width: 768px) { ${style} }`,

@@ -22,6 +22,21 @@ export const H1 = styled.h1`
 H1.propTypes = { ...propTypesColor }
 H1.defaultProps = { color: 'trueBlack' }
 
+export const h3Styles = css`
+  margin: 0;
+  color: ${props => props.theme.colors[props.color]};
+  font-family: ${props => props.theme.fontStacks.chicago};
+  font-size: clamp(1.6rem, 2.344vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.8;
+`
+
+export const H3 = styled.h3`
+  ${h3Styles};
+`
+H3.propTypes = { ...propTypesColor }
+H3.defaultProps = { color: 'trueBlack' }
+
 export const bodyStyles = css`
   margin: 0;
   color: ${props => props.theme.colors[props.color]};
@@ -45,6 +60,16 @@ export const Body2 = styled.p`
 
 Body2.propTypes = { ...propTypesColor }
 Body2.defaultProps = { color: 'trueBlack' }
+
+export const Body3 = styled.p`
+  ${bodyStyles}
+  font-size: clamp(1.6rem, 2.344vw, 1.8rem);
+  font-weight: 400;
+  line-height: calc(22 / 18);
+`
+
+Body3.propTypes = { ...propTypesColor }
+Body3.defaultProps = { color: 'trueBlack' }
 
 export const InlineBody2 = styled.span`
   ${bodyStyles}

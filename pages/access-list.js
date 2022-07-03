@@ -8,6 +8,8 @@ import Public from '../components/layouts/Public'
 import PublicMenuBar from '../components/ui/PublicMenuBar'
 import AccessListMemberGrid from '../components/access-list/ui/AccessListMemberGrid'
 import AccessListHero from '../components/access-list/ui/Hero'
+import AccessListToast from '../components/access-list/ui/Toast'
+import Icon from '../components/access-list/ui/Icon'
 
 const Container = styled.div`
   padding-top: 130px;
@@ -31,6 +33,13 @@ const AccessListPage = ({ first480 }) => {
     <Public variant="light">
       <PublicMenuBar />
       <Container>
+        <AccessListToast
+          buttonText="Join"
+          href="/join"
+          icon={<Icon iconName="envelope" />}
+          subText="Join the waitlist for the next available spot."
+          title="100 Alpha Spots Claimed!"
+        />
         <AccessListHero totalReserved={first480.length} />
         <AccessListsContianer>
           <AccessListMemberGrid members={first30} size="large" />
