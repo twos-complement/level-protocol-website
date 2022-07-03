@@ -46,6 +46,11 @@ const Address = styled(Body1)`
   line-height: 1;
   text-shadow: 0 0.2rem 0.4rem #000000;
   white-space: nowrap;
+
+  ${props =>
+    props.theme.bp.mdPlus(`
+    font-size: clamp(1.2rem, 1.406vw, 1.8rem);
+  `)}
 `
 
 const AccessListMember = ({

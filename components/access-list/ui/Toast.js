@@ -9,7 +9,6 @@ const StyledToast = styled.div`
   align-items: center;
   grid-template-columns: min-content 1fr min-content;
   padding: clamp(2rem, 3.125vw, 2.4rem) clamp(2rem, 5.208vw, 4rem);
-  max-width: 52rem;
   background-color: ${props => props.theme.colors.vibrantCream};
   border: 0.2rem solid ${props => props.theme.colors.trueBlack};
   border-radius: 0.8rem;
@@ -28,6 +27,14 @@ const StyledToast = styled.div`
       display: none;
     `)}
   }
+
+  ${props =>
+    props.theme.bp.lgPlus(`
+    justify-self: end;
+    max-width: 52rem;
+    margin-bottom: -13.5rem;
+    transform: translate(3.7rem, -3.2rem);
+  `)}
 `
 
 const Title = styled(H3)`

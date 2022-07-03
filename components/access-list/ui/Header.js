@@ -10,6 +10,7 @@ const H2 = styled.h2`
   justify-items: center;
   grid-template-columns: 1fr repeat(3, min-content) 1fr;
   grid-gap: 0.8rem;
+  margin: 3.2rem 0 1.2rem;
   color: ${props => props.theme.colors.mutedBlack};
 
   * {
