@@ -59,6 +59,7 @@ const Button = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   transition: color 144ms ease, background-color 144ms ease;
+  cursor: ${props => props.theme.cursors.select};
 
   &:hover {
     color: ${props => props.theme.colors.vibrantCream};
