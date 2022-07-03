@@ -7,6 +7,7 @@ const Header = styled.header`
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
+  margin: 1rem 0 0;
   border: 0.4rem solid ${props => props.theme.colors.mutedBlack};
   border-radius: 3.2rem;
   box-sizing: border-box;

@@ -15,7 +15,10 @@ import Icon from '../components/access-list/ui/Icon'
 const ALPHA_LIST_MAXIMUM = 100
 
 const Container = styled.div`
-  padding-top: 130px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  padding: clamp(6rem, 8.203vw, 10.5rem) clamp(2rem, 5.078vw, 6.5rem);
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
