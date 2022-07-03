@@ -1,4 +1,5 @@
-import HeaderUI, { VARIANTS } from './Header'
+import { LIST_VARIANTS } from './constants'
+import HeaderUI from './Header'
 
 const Template = ({ ...args }) => <HeaderUI {...args} />
 
@@ -55,13 +56,13 @@ const Story = {
       },
     },
     variant: {
-      description: `The list level: ${VARIANTS.join(', ')}.`,
+      description: `The list level: ${LIST_VARIANTS.join(', ')}.`,
       table: {
         defaultValue: {
           summary: 'primary',
         },
       },
-      options: VARIANTS,
+      options: LIST_VARIANTS,
       control: {
         type: 'select',
       },

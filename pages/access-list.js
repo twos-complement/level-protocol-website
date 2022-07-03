@@ -6,11 +6,13 @@ import {
 } from '../util/api/fauna'
 import Public from '../components/layouts/Public'
 import PublicMenuBar from '../components/ui/PublicMenuBar'
-import AccessListMemberGrid from '../components/access-list/ui/AccessListMemberGrid'
+import AccessListContainer from '../components/access-list/ui/Container'
 import Hero from '../components/access-list/ui/Hero'
 import Toast from '../components/access-list/ui/Toast'
 import Header from '../components/access-list/ui/Header'
 import Icon from '../components/access-list/ui/Icon'
+
+const ALPHA_LIST_MAXIMUM = 100
 
 const Container = styled.div`
   padding-top: 130px;
@@ -20,15 +22,9 @@ const Container = styled.div`
   overflow-y: scroll;
 `
 
-const AccessListsContianer = styled.div`
-  padding: 60px 0;
-`
-
 const AccessListPage = ({ first480 }) => {
-  // Split up first three access list groups:
-  const first30 = first480.slice(0, 30)
-  const second100 = first480.slice(30, 100)
-  const third350 = first480.slice(130, 350)
+  const alphaList = first480.slice(0, ALPHA_LIST_MAXIMUM)
+  const waitList = first480.slice(ALPHA_LIST_MAXIMUM)
 
   return (
     <Public variant="light">
@@ -43,17 +39,22 @@ const AccessListPage = ({ first480 }) => {
         />
         <Hero totalReserved={first480.length} />
         <Header
-          count={first480.length}
-          maximum={100}
+          count={alphaList.length}
+          maximum={ALPHA_LIST_MAXIMUM}
           title="Alpha List"
           variant="primary"
         />
-        <Header count={first480.length} title="Waitlist" variant="secondary" />
-        <AccessListsContianer>
-          <AccessListMemberGrid members={first30} size="large" />
-          <AccessListMemberGrid members={second100} size="medium" />
-          <AccessListMemberGrid members={third350} size="small" />
-        </AccessListsContianer>
+        <AccessListContainer members={alphaList} variant="primary" />
+        {waitList.length ? (
+          <>
+            <Header
+              count={waitList.length}
+              title="Waitlist"
+              variant="secondary"
+            />
+            <AccessListContainer members={waitList} variant="secondary" />
+          </>
+        ) : null}
       </Container>
     </Public>
   )
