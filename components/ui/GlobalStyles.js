@@ -9,6 +9,86 @@ import {
 } from './Typography'
 
 const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: "Geneva";
+    src: url("/fonts/geneva/Geneva-Normal-Italic.ttf");
+    font-style: italic, oblique;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Geneva";
+    src: url("/fonts/geneva/Geneva-Bold-Italic.ttf");
+    font-style: italic, oblique;
+    font-weight: bold;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Geneva";
+    src: url("/fonts/geneva/Geneva-Normal.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Geneva";
+    src: url("/fonts/geneva/Geneva-Bold.ttf");
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alagard";
+    src: url("/fonts/alagard.ttf");
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Matter';
+    font-display: swap;
+    src: url('/fonts/matter/Matter-Regular.woff2') format('woff2'), url('/fonts/matter/Matter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Matter';
+    font-display: swap;
+    src: url('/fonts/matter/Matter-Bold.woff2') format('woff2'), url('/fonts/matter/Matter-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Matter';
+    font-display: swap;
+    src: url('/fonts/matter/Matter-SemiBold.woff2') format('woff2'), url('/fonts/matter/Matter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Matter';
+    font-display: swap;
+    src: url('/fonts/matter/Matter-RegularItalic.woff2') format('woff2'), url('/fonts/matter/Matter-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Matter';
+    font-display: swap;
+    src: url('/fonts/matter/Matter-BoldItalic.woff2') format('woff2'), url('/fonts/matter/Matter-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Matter';
+    font-display: swap;
+    src: url('/fonts/matter/Matter-SemiBoldItalic.woff2') format('woff2'), url('/fonts/matter/Matter-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  * {
+    ${body1Styles}
+    box-sizing: border-box;
+  }
 
   html, body {
     padding: 0;
@@ -28,44 +108,6 @@ const GlobalStyles = createGlobalStyle`
     background-color: hsl(var(--hue), 100%, 50%);
   }
 
-  @font-face {
-    font-family: "Geneva";
-    src: url("/fonts/Geneva-Normal-Italic.ttf");
-    font-style: italic, oblique;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Geneva";
-    src: url("/fonts/Geneva-Bold-Italic.ttf");
-    font-style: italic, oblique;
-    font-weight: bold;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Geneva";
-    src: url("/fonts/Geneva-Normal.ttf");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Geneva";
-    src: url("/fonts/Geneva-Bold.ttf");
-    font-weight: 700;
-    font-style: bold;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Alagard";
-    src: url("/fonts/alagard.ttf");
-    font-style: normal;
-    font-display: swap;
-  }
-
-  * {
-    ${body1Styles}
-    box-sizing: border-box;
-  }
   h1 { ${h1Styles} }
   h2 { ${h2Styles} }
   h3 { ${h3Styles} }

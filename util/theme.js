@@ -65,9 +65,10 @@ const theme = {
   },
 
   fontStacks: {
+    alagard: 'Alagard, serif',
     chicago: 'ChicagoFLFRegular, sans-serif',
     geneva: 'Geneva, Verdana',
-    alagard: 'Alagard, serif',
+    matter: 'Matter, sans-serif',
   },
 
   cursors: {
