@@ -95,6 +95,7 @@ const ExternalLink = styled.a`
   background-color: ${props => props.theme.colors.mutedBlack};
   border-radius: 0.4rem;
   text-decoration: none;
+  cursor: ${props => props.theme.cursors.select};
 
   &:hover {
     text-decoration: underline;

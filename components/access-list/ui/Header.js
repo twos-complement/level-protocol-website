@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+import { LIST_VARIANTS } from './constants'
 import Icon from './Icon'
-
-export const VARIANTS = ['primary', 'secondary']
 
 const H2 = styled.h2`
   display: grid;
@@ -81,7 +80,7 @@ AccessListHeader.propTypes = {
   count: PropTypes.number.isRequired,
   maximum: PropTypes.number,
   title: PropTypes.string.isRequired,
-  variant: PropTypes.oneOf(VARIANTS),
+  variant: PropTypes.oneOf(LIST_VARIANTS),
 }
 
 AccessListHeader.defaultProps = {
