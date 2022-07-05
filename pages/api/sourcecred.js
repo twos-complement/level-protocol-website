@@ -1,9 +1,13 @@
 import { getSourcecredContributions } from '../../util/sourcecred'
 
+// TODO: allow each community to configure their own instance:
+const SOURCECRED_URL =
+  'https://raw.githubusercontent.com/twos-complement/sourcecred/gh-pages/'
+
 const SourcecredAPI = async (req, res) => {
   if (req.method === 'GET') {
     try {
-      const data = await getSourcecredContributions()
+      const data = await getSourcecredContributions(SOURCECRED_URL)
       res.statusCode = 200
       res.json({
         data,

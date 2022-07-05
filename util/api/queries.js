@@ -32,6 +32,7 @@ export const FIND_COMMUNITY_BY_ADDRESS_QUERY = gql`
       name
       membersHash
       snapshotEns
+      sourcecredInstanceUrl
     }
   }
 `

@@ -1,47 +1,11 @@
-import { makeFileObjects, storeFiles } from '../../../util/web3Storage'
-// import { getCommunity } from '../../../util/fauna'
+import etl from '../../../util/integrations/sourcecred/etl'
+import withAuth from '../../../util/api/withAuth'
+import withMethods from '../../../util/api/withMethods'
 
-// TODO: Use etl flow like ./snapshot...
-export const aggregateThirdPartyData = async (
-  communityMembers,
-  sourceCredContributions,
-) =>
-  communityMembers
-    .map(member => ({
-      ...member,
-      sourcredData: sourceCredContributions.filter(
-        contribution => contribution.name === member.username,
-      ),
-    }))
-    .flat()
-
-const SourcecredIntegrationAPI = async (req, res) => {
-  if (req.method === 'POST') {
-    try {
-      // Address is temporary hardcoded until we have
-      // a proper way to get the address
-      // from the user connect.
-      // const { community } = await getCommunity('0x')
-      const contributions = req.body.data || []
-      const result = await aggregateThirdPartyData(
-        // community.members.data,
-        contributions,
-      )
-      const files = makeFileObjects(result)
-      const cid = await storeFiles(files)
-      const updatedData = {
-        // ...community,
-        cid,
-      }
-
-      res.statusCode = 200
-      res.json({ updatedData })
-    } catch (error) {
-      console.error(error) // eslint-disable-line no-console
-      res.statusCode = 500
-      res.json({ error })
-    }
-  }
+const handler = async (req, res, { auth: { address } }) => {
+  await etl(address)
+  res.statusCode = 200
+  return res.json({ success: true })
 }
 
-export default SourcecredIntegrationAPI
+export default withAuth(withMethods(['POST'], handler))

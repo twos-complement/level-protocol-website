@@ -4,6 +4,7 @@ type Community {
   name: String!
   membersHash: String!
   snapshotEns: String
+  sourcecredInstanceUrl: String
   events: [CommunityPoapEvent]! @relation(name: "community_poap_events")
 }
 

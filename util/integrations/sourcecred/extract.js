@@ -1,6 +1,6 @@
 import * as sc from 'sourcecred'
 
-export const getSourcecredContributions = async instanceUrl => {
+export const extract = async ({ instanceUrl }) => {
   const instance =
     sc.sourcecred.instance.readInstance.getNetworkReadInstance(instanceUrl)
   const credGrainView = await instance.readCredGrainView()
@@ -9,7 +9,7 @@ export const getSourcecredContributions = async instanceUrl => {
   return credGrainView
     .participants()
     .map(participant => participant.identity)
-    .filter(identity => identity.subtype === 'USER')
+    .filter(identity => identity.subtype === 'USER') // Filtering to only get USERS and not BOTS
     .map(identity => {
       const intervalStartTime = credGrainView
         .intervals()
